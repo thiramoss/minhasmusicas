@@ -1,6 +1,6 @@
 package br.com.thiagoramos.minhasmusicas.modelos;
 
-public class Podcast extends {
+public class Podcast extends Audio {
     private String apresentador;
     private String descricao;
 
@@ -18,5 +18,14 @@ public class Podcast extends {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    @Override
+    public int getClassificacao() {
+        if(this.getTotalCurtidas() > 500) {
+            return 10;
+        } else {
+            return 8;
+        }
     }
 }
